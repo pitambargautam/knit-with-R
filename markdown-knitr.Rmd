@@ -1,0 +1,40 @@
+---
+title: "markdown-knitr"
+author: "pgautam"
+date: "2020/10/7"
+output: html_document
+---
+title: "practice_with_knitr1"
+author: "pgautam"
+date: "2020/10/7"
+output: html_document
+---
+# My First Markdown file
+Created by P Gautam
+===================
+## Using 3 code chunks to demonstrate the air quality relationships
+
+** Summary data**
+```{r summary_code_chunk, echo=FALSE}
+ library(datasets)
+ data(airquality)
+ summary(airquality)
+```
+
+** Pairwise correlation diagram showing bivariate relationships**
+
+ ```{r bivariate_plots_code_chunk, echo=FALSE}
+ pairs(airquality)
+ ```
+
+** Additional statistics**
+```{r linearmodel_fitting_chunk_code, echo=FALSE}
+library(stats)
+fit<-lm(Ozone ~ Wind + Solar.R + Temp, data = airquality)
+summary(fit)
+```
+** Here is a list**  
+* Above I have plotted the following graphs or diagrams*  
+- summary of air quality from ozone data  
+- pairwise bivariate relationships  
+- fits using linear models
